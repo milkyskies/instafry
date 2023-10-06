@@ -1,6 +1,7 @@
 <script lang="ts">
 	import RangeSlider from '$lib/components/range-slider.svelte';
 	import { onMount } from 'svelte';
+	import instructions from '$lib/assets/instructions.png';
 
 	type FryParams = {
 		saturation: number;
@@ -10,7 +11,7 @@
 		pixelation: number;
 	};
 
-	let imageSrc: string;
+	let imageSrc = instructions;
 	let friedImageSrc: string;
 
 	const fryParams = {
@@ -135,7 +136,7 @@
 	<div class="h-[calc(100vh-60px)]">
 		{#if friedImageSrc}
 			<figure class="h-full">
-				<img src={friedImageSrc} alt="deep fried" class="h-full" />
+				<img src={friedImageSrc} alt="deep fried" class="h-full object-scale-down" />
 			</figure>
 		{/if}
 	</div>
