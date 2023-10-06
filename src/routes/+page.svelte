@@ -43,14 +43,14 @@
 
 			reader.onload = async () => {
 				imageSrc = reader.result as string;
-				friedImageSrc = await deepFry({ ...fryParams, dataUrl: imageSrc });
+				friedImageSrc = await instaFry({ ...fryParams, dataUrl: imageSrc });
 			};
 
 			reader.readAsDataURL(blob);
 		}
 	}
 
-	async function deepFry({
+	async function instaFry({
 		dataUrl,
 		saturation,
 		contrast,
@@ -113,7 +113,7 @@
 	}
 
 	onMount(async () => {
-		friedBackgroundSrc = await deepFry({
+		friedBackgroundSrc = await instaFry({
 			dataUrl: blank,
 			saturation: fryParams.saturation,
 			contrast: fryParams.contrast,
@@ -126,7 +126,7 @@
 	});
 
 	async function reFry(): Promise<void> {
-		friedImageSrc = await deepFry({
+		friedImageSrc = await instaFry({
 			dataUrl: imageSrc,
 			saturation: fryParams.saturation,
 			contrast: fryParams.contrast,
@@ -144,7 +144,7 @@
 	>
 		{#if friedImageSrc}
 			<figure class="h-[calc(100vh-60px)]">
-				<img src={friedImageSrc} alt="deep fried" class="h-full w-full object-scale-down" />
+				<img src={friedImageSrc} alt="insta fried" class="h-full w-full object-scale-down" />
 			</figure>
 		{:else}
 			<img src={instructions} alt="instructions" class="h-full object-scale-down" />

@@ -3,27 +3,27 @@
 </script>
 
 <svelte:head>
-	<title>deepfry</title>
+	<title>instafry</title>
 	<meta
 		name="description"
-		content="deep fry, deep fryer, deep fry images, deep fryer online, deepfry"
+		content="insta fry, insta fryer, insta fry images, insta fryer online, instafry"
 	/>
 	<meta
 		name="keywords"
-		content="deep fry, deep fryer, deep fry images, deep fryer online, deep fryer tool, deep fryer app, deep fryer website, deep fryer free, deep fryer free online, deep fryer free tool, deep fryer free app, deep fryer free website, deep fryer free tool online, deep fryer free app online, deep fryer free website online, deep fryer free tool app, deep fryer free tool website, deep fryer free app tool, deep fryer free app website, deep fryer free website tool, deep fryer free website app, deep fryer free tool app online, deep fryer free tool website online, deep fryer free app tool online, deep fryer free app website online, deep fryer free website tool online, deep fryer free website app online, deep fryer free tool app website, deep fryer free tool website app, deep fryer free app tool website, deep fryer free app website tool, deep fryer free website tool app, deep fryer free website app tool, deep fryer free tool app website online, deep fryer free tool website app online, deep fryer free app tool website online, deep fryer free app website tool online, deep fryer free website tool app online, deep fryer free website app tool online"
+		content="insta fry, insta fryer, insta fry images, insta fryer online, insta fryer tool, insta fryer app, insta fryer website, insta fryer free, insta fryer free online, insta fryer free tool, insta fryer free app, insta fryer free website, insta fryer free tool online, insta fryer free app online, insta fryer free website online, insta fryer free tool app, insta fryer free tool website, insta fryer free app tool, insta fryer free app website, insta fryer free website tool, insta fryer free website app, insta fryer free tool app online, insta fryer free tool website online, insta fryer free app tool online, insta fryer free app website online, insta fryer free website tool online, insta fryer free website app online, insta fryer free tool app website, insta fryer free tool website app, insta fryer free app tool website, insta fryer free app website tool, insta fryer free website tool app, insta fryer free website app tool, insta fryer free tool app website online, insta fryer free tool website app online, insta fryer free app tool website online, insta fryer free app website tool online, insta fryer free website tool app online, insta fryer free website app tool online"
 	/>
-	<meta name="author" content="deepfry" />
+	<meta name="author" content="instafry" />
 	<meta name="robots" content="index, follow" />
 	<meta name="googlebot" content="index, follow" />
 	<meta name="google" content="notranslate" />
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta property="og:title" content="deepfryer" />
+	<meta property="og:title" content="instafryer" />
 	<meta
 		property="og:description"
-		content="deep fry, deep fryer, deep fry images, deep fryer online, deepfry"
+		content="insta fry, insta fryer, insta fry images, insta fryer online, instafry"
 	/>
-	<meta property="og:site_name" content="deepfry" />
+	<meta property="og:site_name" content="instafry" />
 	<meta property="og:type" content="website" />
 	<meta property="og:locale" content="en_US" />
 </svelte:head>
