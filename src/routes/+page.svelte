@@ -1,7 +1,8 @@
 <script lang="ts">
 	import RangeSlider from '$lib/components/range-slider.svelte';
 	import { onMount } from 'svelte';
-	import instructions from '$lib/assets/instructions.png';
+	import instructions from '$lib/assets/instructions.gif';
+	import blank from '$lib/assets/blank.png';
 
 	type FryParams = {
 		saturation: number;
@@ -11,8 +12,9 @@
 		pixelation: number;
 	};
 
-	let imageSrc = instructions;
+	let imageSrc: string;
 	let friedImageSrc: string;
+	let friedBackgroundSrc: string;
 
 	const fryParams = {
 		saturation: 90,
@@ -110,14 +112,17 @@
 		return Math.min(Math.max(value, min), max);
 	}
 
-	onMount(() => {
+	onMount(async () => {
+		friedBackgroundSrc = await deepFry({
+			dataUrl: blank,
+			saturation: fryParams.saturation,
+			contrast: fryParams.contrast,
+			noiseIntensity: fryParams.noiseIntensity,
+			jpegness: fryParams.jpegness,
+			pixelation: fryParams.pixelation
+		});
+
 		document.addEventListener('paste', handlePaste);
-
-		reFry();
-
-		return () => {
-			document.removeEventListener('paste', handlePaste);
-		};
 	});
 
 	async function reFry(): Promise<void> {
@@ -133,11 +138,13 @@
 </script>
 
 <div class="flex w-full items-center flex-col justify-center h-screen">
-	<div class="h-[calc(100vh-60px)]">
+	<div class="h-full" style="background: url({friedBackgroundSrc})">
 		{#if friedImageSrc}
-			<figure class="h-full">
+			<figure class="h-[calc(100vh-60px)]">
 				<img src={friedImageSrc} alt="deep fried" class="h-full object-scale-down" />
 			</figure>
+		{:else}
+			<img src={instructions} alt="instructions" class="h-full object-scale-down" />
 		{/if}
 	</div>
 	{#if showParams}
