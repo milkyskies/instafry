@@ -118,8 +118,8 @@
 			saturation: fryParams.saturation,
 			contrast: fryParams.contrast,
 			noiseIntensity: fryParams.noiseIntensity,
-			jpegness: 90,
-			pixelation: 2
+			jpegness: fryParams.jpegness,
+			pixelation: 1
 		});
 
 		document.addEventListener('paste', handlePaste);
@@ -137,35 +137,37 @@
 	}
 </script>
 
-<div
-	class="h-screen w-full flex items-center justify-center"
-	style="background: url({friedBackgroundSrc}); background-repeat: no-repeat; background-size: cover;"
->
-	{#if friedImageSrc}
-		<figure class="h-[calc(100vh-60px)]">
-			<img src={friedImageSrc} alt="deep fried" class="h-full w-full" />
-		</figure>
-	{:else}
-		<img src={instructions} alt="instructions" class="h-full object-scale-down" />
-	{/if}
-</div>
-{#if showParams}
-	<div class="w-1/2 gap-2 flex flex-col">
-		<div class="">Saturation: {fryParams.saturation}</div>
-		<RangeSlider bind:value={fryParams.saturation} min={0} max={100} step={1} on:change={reFry} />
-		<div class="">Contrast: {fryParams.contrast}</div>
-		<RangeSlider bind:value={fryParams.contrast} min={0} max={100} step={1} on:change={reFry} />
-		<div class="">Noise Intensity: {fryParams.noiseIntensity}</div>
-		<RangeSlider
-			bind:value={fryParams.noiseIntensity}
-			min={0}
-			max={100}
-			step={1}
-			on:change={reFry}
-		/>
-		<div class="">JPEG Quality: {fryParams.jpegness}</div>
-		<RangeSlider bind:value={fryParams.jpegness} min={0} max={100} step={1} on:change={reFry} />
-		<div class="">Pixelation: {fryParams.pixelation}</div>
-		<RangeSlider bind:value={fryParams.pixelation} min={1} max={10} step={1} on:change={reFry} />
+{#if friedBackgroundSrc}
+	<div
+		class="h-screen w-full flex items-center justify-center"
+		style="background: url({friedBackgroundSrc}); background-repeat: no-repeat; background-size: cover;"
+	>
+		{#if friedImageSrc}
+			<figure class="h-[calc(100vh-60px)]">
+				<img src={friedImageSrc} alt="deep fried" class="h-full w-full" />
+			</figure>
+		{:else}
+			<img src={instructions} alt="instructions" class="h-full object-scale-down" />
+		{/if}
 	</div>
+	{#if showParams}
+		<div class="w-1/2 gap-2 flex flex-col">
+			<div class="">Saturation: {fryParams.saturation}</div>
+			<RangeSlider bind:value={fryParams.saturation} min={0} max={100} step={1} on:change={reFry} />
+			<div class="">Contrast: {fryParams.contrast}</div>
+			<RangeSlider bind:value={fryParams.contrast} min={0} max={100} step={1} on:change={reFry} />
+			<div class="">Noise Intensity: {fryParams.noiseIntensity}</div>
+			<RangeSlider
+				bind:value={fryParams.noiseIntensity}
+				min={0}
+				max={100}
+				step={1}
+				on:change={reFry}
+			/>
+			<div>JPEG Quality: {fryParams.jpegness}</div>
+			<RangeSlider bind:value={fryParams.jpegness} min={0} max={100} step={1} on:change={reFry} />
+			<div class="">Pixelation: {fryParams.pixelation}</div>
+			<RangeSlider bind:value={fryParams.pixelation} min={1} max={10} step={1} on:change={reFry} />
+		</div>
+	{/if}
 {/if}
