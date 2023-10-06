@@ -144,7 +144,7 @@
 	>
 		{#if friedImageSrc}
 			<figure class="h-[calc(100vh-60px)]">
-				<img src={friedImageSrc} alt="deep fried" class="h-full w-full" />
+				<img src={friedImageSrc} alt="deep fried" class="h-full w-full object-scale-down" />
 			</figure>
 		{:else}
 			<img src={instructions} alt="instructions" class="h-full object-scale-down" />
