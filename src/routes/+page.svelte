@@ -118,8 +118,8 @@
 			saturation: fryParams.saturation,
 			contrast: fryParams.contrast,
 			noiseIntensity: fryParams.noiseIntensity,
-			jpegness: fryParams.jpegness,
-			pixelation: fryParams.pixelation
+			jpegness: 90,
+			pixelation: 2
 		});
 
 		document.addEventListener('paste', handlePaste);
@@ -139,11 +139,11 @@
 
 <div
 	class="h-screen w-full flex items-center justify-center"
-	style="background: url({friedBackgroundSrc})"
+	style="background: url({friedBackgroundSrc}); background-repeat: no-repeat; background-size: cover;"
 >
 	{#if friedImageSrc}
 		<figure class="h-[calc(100vh-60px)]">
-			<img src={friedImageSrc} alt="deep fried" class="h-full object-scale-down" />
+			<img src={friedImageSrc} alt="deep fried" class="h-full w-full" />
 		</figure>
 	{:else}
 		<img src={instructions} alt="instructions" class="h-full object-scale-down" />
